@@ -1,0 +1,13 @@
+Subject: Urgent: Your Account Will Be Suspended
+
+Dear Valued Customer,
+
+We have detected suspicious activity on your account. Your account access will be suspended within 24 hours unless you verify your information immediately.
+
+Please click on the link below to confirm your details:
+http://secure-account-verification.com/verify?id=123456
+
+If you fail to verify your account, your access will be permanently suspended.
+
+Thank you for your cooperation,
+Security Team 

@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Detection System Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .metric-card {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .img-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .phishing {
+            color: #e74c3c;
+        }
+        .legitimate {
+            color: #27ae60;
+        }
+        .incorrect {
+            background-color: #ffecec;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Phishing Email Detection System Report</h1>
+        <p>Generated on 2025-05-09 13:59:24</p>
+    </div>
+    
+    <div class="section">
+        <h2>1. Model Performance Overview</h2>
+        <div class="metrics">
+            <div class="metric-card">
+                <h3>Accuracy</h3>
+                <div class="metric-value">0.7</div>
+            </div>
+            <div class="metric-card">
+                <h3>Precision</h3>
+                <div class="metric-value">0.625</div>
+            </div>
+            <div class="metric-card">
+                <h3>Recall</h3>
+                <div class="metric-value">1.0</div>
+            </div>
+            <div class="metric-card">
+                <h3>F1 Score</h3>
+                <div class="metric-value">0.7692</div>
+            </div>
+            <div class="metric-card">
+                <h3>AUC</h3>
+                <div class="metric-value">0.96</div>
+            </div>
+        </div>
+        
+        <div class="img-container">
+            <h3>Confusion Matrix</h3>
+            <img src="confusion_matrix.png" alt="Confusion Matrix">
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>2. Prediction Results</h2>
+        <h3>Summary</h3>
+        <p>Tested on 10 emails: 5 phishing and 5 legitimate.</p>
+        <p>Correctly classified: 7 (70.0%)</p>
+        <p>Misclassified: 3 (30.0%)</p>
+        
+        <h3>Predictions Table</h3>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Actual</th>
+                <th>Predicted</th>
+                <th>Confidence</th>
+                <th>Result</th>
+            </tr>
+            
+            <tr >
+                <td>Meeting tomorrow</td>
+                <td class="legitimate">
+                    legitimate
+                </td>
+                <td class="legitimate">
+                    legitimate
+                </td>
+                <td>0.1091</td>
+                <td>✓</td>
+            </tr>
+            
+            <tr >
+                <td>URGENT: Account Security Alert</td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.9967</td>
+                <td>✓</td>
+            </tr>
+            
+            <tr >
+                <td>Urgent: Your Account Will Be Suspended</td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.9994</td>
+                <td>✓</td>
+            </tr>
+            
+            <tr >
+                <td>Weekly Report</td>
+                <td class="legitimate">
+                    legitimate
+                </td>
+                <td class="legitimate">
+                    legitimate
+                </td>
+                <td>0.3157</td>
+                <td>✓</td>
+            </tr>
+            
+            <tr >
+                <td>ACTION REQUIRED: Verify Your Payment Information</td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.9956</td>
+                <td>✓</td>
+            </tr>
+            
+            <tr class="incorrect">
+                <td>Invitation to speak at conference</td>
+                <td class="legitimate">
+                    legitimate
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.9199</td>
+                <td>✗</td>
+            </tr>
+            
+            <tr class="incorrect">
+                <td>Your package is on its way</td>
+                <td class="legitimate">
+                    legitimate
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.9896</td>
+                <td>✗</td>
+            </tr>
+            
+            <tr >
+                <td>ALERT: Unusual Sign-in Activity</td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.9909</td>
+                <td>✓</td>
+            </tr>
+            
+            <tr >
+                <td>Congratulations! You've won a prize</td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.9894</td>
+                <td>✓</td>
+            </tr>
+            
+            <tr class="incorrect">
+                <td>Project status update</td>
+                <td class="legitimate">
+                    legitimate 
+                </td>
+                <td class="phishing">
+                    phishing
+                </td>
+                <td>0.645</td>
+                <td>✗</td>
+            </tr>
+            
+        </table>
+    </div>
+    
+    
+    <div class="section">
+        <h2>3. Misclassified Examples</h2>
+        
+        <div class="example incorrect">
+            <h3>Example 1</h3>
+            <p><strong>Subject:</strong> Invitation to speak at conference</p>
+            <p><strong>Body:</strong> Dear colleague, I would like to invite you to speak at our upcoming conference on AI and cybersecurity. Please let me know if you're interested and available.</p>
+            <p><strong>True label:</strong> <span class="legitimate">legitimate</span></p>
+            <p><strong>Predicted:</strong> <span class="phishing">phishing</span> (probability: 0.9199)</p>
+        </div>
+        
+        <div class="example incorrect">
+            <h3>Example 2</h3>
+            <p><strong>Subject:</strong> Your package is on its way</p>
+            <p><strong>Body:</strong> Your order #12345 has been shipped and is expected to arrive on Friday. You can track your package here: https://legitimate-shipping.com/track?id=12345</p>
+            <p><strong>True label:</strong> <span class="legitimate">legitimate</span></p>
+            <p><strong>Predicted:</strong> <span class="phishing">phishing</span> (probability: 0.9896)</p>
+        </div>
+        
+        <div class="example incorrect">
+            <h3>Example 3</h3>
+            <p><strong>Subject:</strong> Project status update</p>
+            <p><strong>Body:</strong> The development team has completed the first phase of the project. We're on track to meet the deadline next month.</p>
+            <p><strong>True label:</strong> <span class="legitimate">legitimate </span></p>
+            <p><strong>Predicted:</strong> <span class="phishing">phishing</span> (probability: 0.645)</p>
+        </div>
+        
+    </div>
+    
+    
+    <div class="section">
+        <h2>4. Recommendations</h2>
+        <p>Based on the evaluation results, here are some recommendations to improve the model:</p>
+        <ul>
+            <li>The model has a tendency to classify legitimate emails as phishing, especially those with links or keywords commonly found in phishing emails. Consider improving feature engineering to better distinguish between legitimate and phishing links.</li>
+            <li>Add more contextual features to help the model better understand the semantics of the emails.</li>
+            <li>Increase the training dataset with more diverse examples of legitimate emails containing links.</li>
+            <li>Consider fine-tuning the model threshold to reduce false positives if preserving legitimate emails is more important than catching all phishing attempts.</li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <p>Phishing Email Detection System © 2025</p>
+    </div>
+</body>
+</html>
