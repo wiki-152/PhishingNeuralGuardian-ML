@@ -5,6 +5,7 @@
 Script to combine all processed datasets into a single file.
 """
 
+import utils.session
 import os
 import pandas as pd
 from pathlib import Path
